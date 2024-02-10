@@ -5,8 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BookRentalClient"
         mc:Ignorable="d"
+        Loaded="Window_Loaded"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Könyvek" HorizontalAlignment="Center"/>
+        <ListBox x:Name="LB_Books" Grid.Row="1"/>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Button Content="Új" Grid.Column="0" Click="NewBook_Click"/>
+            <Button Content="Szerkesztés" Grid.Column="1" Click="EditBook_Click"/>
+            <Button Content="Törlés" Grid.Column="2" Click="DeleteBook_click"/>
+        </Grid>
     </Grid>
 </Window>
